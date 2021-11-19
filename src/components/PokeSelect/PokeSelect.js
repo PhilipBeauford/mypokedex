@@ -1,5 +1,7 @@
 import React from 'react'
-import styles from './PokeSelect.module.css'
+import '../../App.css'
+
+
 
 function PokeSelect({ pokemonList, setCurrentPokemonId }){
   const pokemons = pokemonList.map((pokemon, index) => {
@@ -14,7 +16,7 @@ function PokeSelect({ pokemonList, setCurrentPokemonId }){
   })
 
   return (
-    <div className={styles.PokeSelect}>
+    <div className='PokeSelect'>
       <label htmlFor="pokemon">Choose a Pokemon:</label>
       <select onChange={(e) => setCurrentPokemonId(e.target.value)}>
         {pokemons}

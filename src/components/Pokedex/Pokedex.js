@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Pokemon from '../Pokemon/Pokemon'
-import styles from './Pokedex.module.css'
 import PokeSelect from '../PokeSelect/PokeSelect'
 import { getOriginalPokemonList } from '../../api/utils'
+import '../../App.css'
+
+
 
 function Pokedex(){
   const [pokemonList, setPokemonList] = useState([])
@@ -16,8 +18,12 @@ function Pokedex(){
     })();
   }, [])
 
+
+
+
+
   return (
-    <div className={styles.Pokedex}>
+    <div className='Pokedex'>
       <PokeSelect
         setCurrentPokemonId={setCurrentPokemonId}
         pokemonList={pokemonList}
