@@ -23,3 +23,15 @@ export async function getOriginalPokemonList(){
   
     return pokemon.flavor_text_entries[0].flavor_text.replace(/[\n\f]/g, ' ');
   }
+
+
+
+  export async function getPokemonType(id){
+    const data = await fetch(
+      `https://pokeapi.co/api/v2/type/${id}/`
+    ).then(response => response.json())
+
+    console.log(data.name)
+    return data.name
+    
+  }

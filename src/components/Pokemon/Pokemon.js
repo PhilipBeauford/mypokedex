@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { getPokemonDescription, getPokemonImage } from '../../api/utils'
+import { getPokemonDescription, getPokemonImage, getPokemonType } from '../../api/utils'
 import '../../App.css'
 
 
 
 function Pokemon({ pokemonList, currentPokemonId }){
   const [pokemonDescription, setPokemonDescription] = useState('')
+  const [ pokemonType, setPokemonType ] = useState('')
 
 
   function formatName(name){
@@ -22,6 +23,15 @@ function Pokemon({ pokemonList, currentPokemonId }){
     }, [currentPokemonId]
   )
 
+  useEffect(() => {
+    (async function loadPokemonType(){
+      const results = await getPokemonType(currentPokemonId)
+
+      setPokemonType(results)
+    })();
+  }, [currentPokemonId]
+)
+
 
   if (pokemonList.length > 0) {
     const pokemonName = formatName(pokemonList[currentPokemonId - 1].name)
@@ -36,6 +46,7 @@ function Pokemon({ pokemonList, currentPokemonId }){
         <h2 className='pokemon-name'>
           {pokemonName}
         </h2>
+        <h4>Type:  {pokemonType}</h4>
         <div className='pokemon-description-container'>
           {pokemonDescription}
         </div>
