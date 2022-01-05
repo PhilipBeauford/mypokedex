@@ -7,24 +7,25 @@ import '../../App.css'
 function Pokemon({ pokemonList, currentPokemonId }){
   const [pokemonDescription, setPokemonDescription] = useState('')
 
- 
+
+  function formatName(name){
+    return name.slice(0,1).toUpperCase() + name.slice(1)
+  }
+
+
   useEffect(() => {
-    (async function loadPokemonDescription(){
-      const results = await getPokemonDescription(currentPokemonId)
+      (async function loadPokemonDescription(){
+        const results = await getPokemonDescription(currentPokemonId)
 
-      setPokemonDescription(results)
-    })();
-  }, [currentPokemonId])
-
+        setPokemonDescription(results)
+      })();
+    }, [currentPokemonId]
+  )
 
 
   if (pokemonList.length > 0) {
     const pokemonName = formatName(pokemonList[currentPokemonId - 1].name)
 
-
- function formatName(name){
-    return name.slice(0,1).toUpperCase() + name.slice(1)
-  }
 
 
     return (

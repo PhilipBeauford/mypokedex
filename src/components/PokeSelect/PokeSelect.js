@@ -2,7 +2,6 @@ import React from 'react'
 import '../../App.css'
 
 
-
 function PokeSelect({ pokemonList, setCurrentPokemonId }){
   const pokemons = pokemonList.map((pokemon, index) => {
     return (
@@ -14,6 +13,7 @@ function PokeSelect({ pokemonList, setCurrentPokemonId }){
       </option>
     )
   })
+  
 
   return (
     <div className='PokeSelect'>

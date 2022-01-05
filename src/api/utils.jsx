@@ -1,5 +1,3 @@
-
-
 // Get the first 150 Pokemon
 export async function getOriginalPokemonList(){
     const data = await fetch(
@@ -11,15 +9,11 @@ export async function getOriginalPokemonList(){
   }
   
 
-
-
   // Get pokemon image (front view)
   export function getPokemonImage(id){
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
   }
   
-
-
 
   // Get pokemon description (flavor) text
   export async function getPokemonDescription(id){

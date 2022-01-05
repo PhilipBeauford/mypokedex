@@ -5,10 +5,10 @@ import { getOriginalPokemonList } from '../../api/utils'
 import '../../App.css'
 
 
-
 function Pokedex(){
   const [pokemonList, setPokemonList] = useState([])
   const [currentPokemonId, setCurrentPokemonId] = useState(1)
+
 
   useEffect(() => {
     (async function loadPokemonList(){
@@ -17,8 +17,6 @@ function Pokedex(){
       setPokemonList(results)
     })();
   }, [])
-
-
 
 
 
