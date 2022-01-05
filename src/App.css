@@ -1,91 +1,6 @@
-.App {
-  text-align: center;
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-
-.wrapper {
-  width: 100%;
-  height: auto;
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pokecard {
-  height: 500px;
-  width: 400px;
-  background-color: #2c85da;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  align-items: center;
-}
-
-.pokesearch {
-  height: 30px;
-  width: 300px;
-  background-color: aliceblue;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-
-.innercard {
-  width: 300px;
-  height: 400px;
-  background-color: aliceblue;
-  border-radius: 20px;
-  margin-top: 7px;
-}
-
-.pee {
-  margin-bottom: -5px;
-  margin-top: 10px;
-  color: whitesmoke;
-}
-
-p {
-  margin-top: 0px;
-}
-
-button {
-  height: 20px;
-  width: 100px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
 
 .Pokedex {
-  background-color: red;
+  background-color: #005596;
   width: 400px;
   height: 500px;
   margin: 0 auto;
@@ -105,14 +20,19 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 1.5rem;
 }
 select {
   width: 100%;
   height: 30px;
+  border-radius: 8px;
 }
 
 
-
+label {
+  margin-bottom: .5rem;
+}
 
 
 .Pokemon {
@@ -132,7 +52,7 @@ select {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #000;
+  border: 2px solid rgb(202, 81, 10);
 }
 
 .pokemon-image-container > img {
@@ -151,9 +71,3 @@ select {
 .pokemon-description-container {
   text-align: center;
 }
-
-
-
-
-
-*/
