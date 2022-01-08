@@ -1,4 +1,5 @@
 # Philip's Pokedex
+![pokegif](Pokedex1.gif)
 React example Pokedex app. 
 Utilizes useState & useEffect hooks,
 along with async/await API data fetching from pokeapi!
