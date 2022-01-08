@@ -1,5 +1,7 @@
 # Philip's Pokedex
-
+React example Pokedex app. 
+Utilizes useState & useEffect hooks,
+along with async/await API data fetching from pokeapi!
 
 ## To Try For Yourself
 
