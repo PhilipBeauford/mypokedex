@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getPokemonDescription, getPokemonImage, getPokemonType } from '../../api/utils'
+import { getPokemonDescription, getPokemonImage, getPokemonType, getPokemonAbilities } from '../../api/utils'
 import '../../App.css'
 
 
@@ -7,11 +7,13 @@ import '../../App.css'
 function Pokemon({ pokemonList, currentPokemonId }){
   const [pokemonDescription, setPokemonDescription] = useState('')
   const [ pokemonType, setPokemonType ] = useState('')
+  const [ pokemonAbilities, setPokemonAbilities ] = useState('')
 
 
   function formatName(name){
     return name.slice(0,1).toUpperCase() + name.slice(1)
   }
+
 
 
   useEffect(() => {
@@ -23,6 +25,7 @@ function Pokemon({ pokemonList, currentPokemonId }){
     }, [currentPokemonId]
   )
 
+
   useEffect(() => {
     (async function loadPokemonType(){
       const results = await getPokemonType(currentPokemonId)
@@ -31,6 +34,17 @@ function Pokemon({ pokemonList, currentPokemonId }){
     })();
   }, [currentPokemonId]
 )
+
+
+useEffect(() => {
+    (async function loadPokemonAbility(){
+      const results = await getPokemonAbilities(currentPokemonId)
+
+      setPokemonAbilities(results)
+    })();
+  }, [currentPokemonId]
+)
+
 
 
   if (pokemonList.length > 0) {
@@ -46,7 +60,12 @@ function Pokemon({ pokemonList, currentPokemonId }){
         <h2 className='pokemon-name'>
           {pokemonName}
         </h2>
-        <h4>Type:  {pokemonType}</h4>
+        <div className='pokemon-typability'>
+          <h4>TYPE: 
+            <p>&nbsp;{pokemonType}</p></h4>
+        <h4>ABILITY: <p>{pokemonAbilities}</p> </h4>
+        </div>
+        
         <div className='pokemon-description-container'>
           {pokemonDescription}
         </div>

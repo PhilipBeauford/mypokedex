@@ -53,6 +53,7 @@ label {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid rgb(202, 81, 10);
+  margin-top: 1rem;
 }
 
 .pokemon-image-container > img {
@@ -70,4 +71,38 @@ label {
 
 .pokemon-description-container {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
+
+
+.pokemon-typability {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: -10px;
+}
+
+h4 {
+  color:rgb(202, 81, 10);
+}
+
+
+p {
+  display: inline;
+  color: #005596;
+}
+
+/*
+h4 {
+  display: inline;
+  padding: .5rem;
+  color:rgb(202, 81, 10);
+}
+
+p {
+  display: inline;
+  padding-right: .5rem;
+  padding-left: .3rem;
+  color: black;
+}
+
+*/

@@ -25,13 +25,20 @@ export async function getOriginalPokemonList(){
   }
 
 
-
+// Philips get Pokemon type
   export async function getPokemonType(id){
     const data = await fetch(
       `https://pokeapi.co/api/v2/type/${id}/`
     ).then(response => response.json())
 
-    console.log(data.name)
     return data.name
     
+  }
+
+  export async function getPokemonAbilities(id){
+    const data = await fetch(
+      `https://pokeapi.co/api/v2/ability/${id}/`
+    ).then(response => response.json())
+
+    return data.name
   }
